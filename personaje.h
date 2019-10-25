@@ -11,22 +11,22 @@ using namespace sf;
 class personaje{
 	
 private:
-	
+	int x;
 	int y;
-	int vely;
+	int velY;
 	int ancho;
 	int alto;
 	Sprite sflappy;
 	
 	
 public:
-	personaje(Texture *tex , int y);
+	personaje(Texture *tex , int x, int y);
 	
 	void subir();
 	
 	void dibujar(RenderWindow *w);
 	
-	void bajar();
+	void caer();
 	
 	
 	

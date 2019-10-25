@@ -2,9 +2,9 @@
 
 #include "personaje.h"
 
+int altura=10; 
 
-
-personaje::personaje(Texture *tex, int y) {
+personaje::personaje(Texture *tex,int x, int y) {
 	sflappy.setTexture(*tex);
 	ancho = tex->getSize().x;
 	alto = tex->getSize().y;
@@ -13,17 +13,23 @@ personaje::personaje(Texture *tex, int y) {
 	
 	velY = 0;
 }
-void Auto::subir() {
-	y += -5;
+void personaje::subir() {
+	
+	altura+= -5;
+	altura+= -10;
+	altura+= -20;
+	
+	
 }
 
-void Auto::bajar() {
-	y += 5;
+void personaje::caer() {
+	altura+= 10;
+	
 }
 
-
-void Auto::dibujar(RenderWindow *w) {
-	sflappy.setPosition(y);
+void personaje::dibujar(RenderWindow *w) {
+	
+	sflappy.setPosition(100, altura);
 	w->draw(sflappy);
 }
 
