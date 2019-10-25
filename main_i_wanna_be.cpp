@@ -6,6 +6,7 @@
 #include "personaje.h"
 using namespace sf;
 
+//hello
 
 int main() {
 	
