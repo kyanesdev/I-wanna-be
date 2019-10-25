@@ -49,8 +49,6 @@ int main() {
 
 		}
 		
-	
-		
 		if (Keyboard::isKeyPressed(Keyboard::Up)) {
 			if(upApretado==false){
 				

@@ -28,8 +28,12 @@ void personaje::caer() {
 }
 
 void personaje::dibujar(RenderWindow *w) {
-	
 	sflappy.setPosition(100, altura);
 	w->draw(sflappy);
+	//ver ver ver ver
+	if(altura==300 && altura==0){
+		int *maplimit=0;
+	}
+	
 }
 
