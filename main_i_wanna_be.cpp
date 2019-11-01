@@ -22,7 +22,7 @@ int main() {
 	resy=400;
 	
 	RenderWindow w(VideoMode(640, 480), "i wanna be");
-	w.setFramerateLimit(20);
+	w.setFramerateLimit(30);
 	
 	/*
 	Sprite spressEnter;
@@ -40,6 +40,8 @@ int main() {
 	
 	int cooldown=0, conta;
 	bool upApretado = false;
+	
+	
 	while (w.isOpen()) {
 	
 		Event e;
