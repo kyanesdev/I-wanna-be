@@ -2,8 +2,11 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "pressEnter.h"
+
 #include "personaje.h"
+#include "obstaculo.h"
+
+
 
 
 using namespace sf;
@@ -15,7 +18,7 @@ int main() {
 	
 	
 	Texture tpersonaje;
-	
+
 	
 	int resx, resy, y=10;
 	
@@ -36,18 +39,17 @@ int main() {
 	
 	w.setFramerateLimit(20);
 	
-	/*
-	Sprite spressEnter;
-	
-	tpressEnter.loadFromFile("pressEnter1.png");
-	spressEnter.setTexture(tpressEnter);
-	spressEnter.setPosition(50, 50);
-	*/
-	
 	
 	
 	tpersonaje.loadFromFile("flappy.png");
 	personaje player(&tpersonaje, 640 / 2, 480 / 2);
+	
+	
+	
+	obstaculo pilar(640 / 2, 480 / 2);
+	
+	
+	
 	
 	
 	int cooldown=0, conta;
@@ -95,7 +97,7 @@ int main() {
 		w.draw(sground);
 		player.dibujar(&w);
 		player.caer();
-			
+		pilar.dibujar(&w);
 		
 		
 		
