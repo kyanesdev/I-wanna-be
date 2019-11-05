@@ -94,10 +94,13 @@ int main() {
 		if(cooldown>0){
 			cooldown--;
 		}
+		
+		pilar.dibujar(&w);
 		w.draw(sground);
 		player.dibujar(&w);
+		
 		player.caer();
-		pilar.dibujar(&w);
+		
 		
 		
 		
@@ -110,6 +113,6 @@ int main() {
 		
 	
 	
-	return 0;
+	return EXIT_SUCCESS;
 }
 
