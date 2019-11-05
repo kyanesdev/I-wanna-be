@@ -1,6 +1,7 @@
-#include<iosstream>
+#include<iostream>
 
-int main(){
+int main()
+{
 	return EXIT_SUCCESS;
 }
 	
