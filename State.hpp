@@ -1,6 +1,6 @@
 #pragma oncee
 
-namespace Sonar{
+namespace Game{
 	
 	class State{
 		

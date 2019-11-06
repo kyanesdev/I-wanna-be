@@ -1,6 +1,6 @@
 #include "StateMachine.hpp"
 
-namespace Sonar
+namespace Game 
 {
 	
 	void StateMachine::AddState(StateRef newState, bool isReplacing)
