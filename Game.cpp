@@ -1,12 +1,12 @@
 #include "Game.hpp"
-
+#include "SplashState.hpp" 
 namespace Sonar
 {
 	//Esto sera la funcion implementada de ancho, largo y titulo
 	Game::Game(int width , int height, std::string title)
 	{
 		_data->window.create(sf::VideoMode (width, height), title , sf::Style::Close | sf::Style::Titlebar);
-		
+		_data->machine.AddState(StateRef(new SplashState(this->_data)));
 		
 		//Lo corre al juego
 		this->Run();
