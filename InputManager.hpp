@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-namespace Game {
+namespace Sonar {
 	
 	class InputManager{
 		

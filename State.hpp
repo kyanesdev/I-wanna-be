@@ -1,6 +1,6 @@
 #pragma oncee
 
-namespace Game{
+namespace Sonar{
 	
 	class State{
 		
@@ -9,7 +9,7 @@ namespace Game{
 		
 		virtual void HandleInput( )=0;
 		
-		virtual void Update( )=0;
+		virtual void Update(int dt)=0;
 		
 		virtual void Draw( float dt )=0;
 		
