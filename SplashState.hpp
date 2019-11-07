@@ -13,7 +13,7 @@ namespace Sonar
 			
 			void Init();
 			
-			void handleInput();
+			void HandleInput();
 			void Update (float dt);
 			void Draw(float dt);
 		private:
