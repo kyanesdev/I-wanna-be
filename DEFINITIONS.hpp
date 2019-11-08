@@ -17,3 +17,5 @@
 
 #define PIPE_UP_FILEPATH "PipeUp.png"
 #define PIPE_DOWN_FILEPATH "PipeDown.png"
+
+#define PIPE_MOVEMENT_SPEED 200.0f
