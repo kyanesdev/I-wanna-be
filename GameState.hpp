@@ -4,7 +4,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include "Pipe.hpp"
-
+#include "Bird.hpp"
 
 
 namespace Sonar
@@ -25,6 +25,7 @@ namespace Sonar
 		sf::Sprite _background;
 		
 		Pipe *pipe;
+		Bird *bird;
 		
 		sf::Clock clock;
 		

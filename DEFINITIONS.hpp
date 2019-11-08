@@ -20,6 +20,9 @@
 
 
 
-#define PIPE_MOVEMENT_SPEED 150.0f
-#define PIPE_SPAWN_FREQUENCY 2.3f
+#define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 2.0f
 
+#define BIRD_FRAME_1_FILEPATH "bird-01.png"
+#define BIRD_FRAME_2_FILEPATH "bird-02.png"
+#define BIRD_FRAME_3_FILEPATH "bird-03.png"

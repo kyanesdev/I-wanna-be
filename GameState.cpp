@@ -2,6 +2,7 @@
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 
+
 #include <iostream>
 
 namespace Sonar
@@ -15,9 +16,10 @@ namespace Sonar
 	{
 		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe",PIPE_UP_FILEPATH);
+		_data->assets.LoadTexture("Bird 1",BIRD_FRAME_1_FILEPATH);
 		
 		pipe = new Pipe(_data);
-
+		bird = new Bird(_data);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
@@ -34,9 +36,7 @@ namespace Sonar
 			
 			if(_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
-				pipe->SpawnInvisiblePipe();
-				pipe->SpawnBottomPipe();
-				pipe->SpawnTopPipe();
+			
 			}
 		}
 	}
@@ -60,7 +60,7 @@ namespace Sonar
 		
 		_data->window.draw( _background );
 		pipe->DrawPipes();
-
+		bird->Draw();
 		_data->window.display( );
 	}
 };
