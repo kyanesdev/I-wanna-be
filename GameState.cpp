@@ -14,8 +14,8 @@ namespace Sonar
 	void GameState::Init()
 	{
 		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
-		_data->assets.LoadTexture("Pipe Up",PIPE_UP_FILEPATH);
-		_data->assets.LoadTexture("Pipe Down",PIPE_DOWN_FILEPATH);
+		_data->assets.LoadTexture("Pipe",PIPE_UP_FILEPATH);
+		_data->assets.LoadTexture("Pipe",PIPE_DOWN_FILEPATH);
 		
 		pipe = new Pipe(_data);
 		
