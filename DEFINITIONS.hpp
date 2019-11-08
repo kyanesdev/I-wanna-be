@@ -18,4 +18,8 @@
 #define PIPE_UP_FILEPATH "Pipe.png"
 #define PIPE_DOWN_FILEPATH "Pipe.png"
 
-#define PIPE_MOVEMENT_SPEED 200.0f
+
+
+#define PIPE_MOVEMENT_SPEED 150.0f
+#define PIPE_SPAWN_FREQUENCY 2.3f
+

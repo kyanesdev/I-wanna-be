@@ -5,6 +5,8 @@
 #include "Game.hpp"
 #include "Pipe.hpp"
 
+
+
 namespace Sonar
 {
 	class GameState : public State 
@@ -23,6 +25,8 @@ namespace Sonar
 		sf::Sprite _background;
 		
 		Pipe *pipe;
+		
+		sf::Clock clock;
 		
 	};
 };

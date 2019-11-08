@@ -15,9 +15,9 @@ namespace Sonar
 	{
 		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe",PIPE_UP_FILEPATH);
-		_data->assets.LoadTexture("Pipe",PIPE_DOWN_FILEPATH);
 		
 		pipe = new Pipe(_data);
+
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
@@ -43,6 +43,14 @@ namespace Sonar
 	void GameState::Update(float dt)
 	{
 		pipe->MovePipes(dt);
+		if(clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY){
+		
+			pipe->SpawnInvisiblePipe();
+			pipe->SpawnBottomPipe();
+			pipe->SpawnTopPipe();
+			clock.restart();
+			
+		}
 	}
 	void GameState::Draw( float dt ) 
 	{
@@ -50,6 +58,7 @@ namespace Sonar
 		
 		_data->window.draw( _background );
 		pipe->DrawPipes();
+
 		_data->window.display( );
 	}
 };
