@@ -10,7 +10,7 @@ namespace Sonar
 	
 	void Pipe::SpawnBottomPipe()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
+		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
 		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height );
 			
@@ -18,7 +18,7 @@ namespace Sonar
 	}
 	void Pipe::SpawnTopPipe()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
+		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
 		sprite.setPosition(_data->window.getSize().x , 0 );
 			
@@ -26,7 +26,7 @@ namespace Sonar
 	}
 	void Pipe::SpawnInvisiblePipe()
 	{
-		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
+		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
 		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height );
 			
