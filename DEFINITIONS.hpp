@@ -26,3 +26,8 @@
 #define BIRD_FRAME_1_FILEPATH "bird-01.png"
 #define BIRD_FRAME_2_FILEPATH "bird-02.png"
 #define BIRD_FRAME_3_FILEPATH "bird-03.png"
+
+#define BIRD_ANIMATION_DURATION 0.4f
+
+
+

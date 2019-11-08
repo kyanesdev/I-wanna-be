@@ -17,6 +17,9 @@ namespace Sonar
 		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe",PIPE_UP_FILEPATH);
 		_data->assets.LoadTexture("Bird 1",BIRD_FRAME_1_FILEPATH);
+		_data->assets.LoadTexture("Bird 2",BIRD_FRAME_2_FILEPATH);
+		_data->assets.LoadTexture("Bird 3",BIRD_FRAME_3_FILEPATH);
+		
 		
 		pipe = new Pipe(_data);
 		bird = new Bird(_data);
@@ -53,6 +56,8 @@ namespace Sonar
 			clock.restart();
 			
 		}
+		
+		bird->Animate(dt);
 	}
 	void GameState::Draw( float dt ) 
 	{
