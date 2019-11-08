@@ -1,7 +1,8 @@
 
+
 #include<sstream>
 #include "SplashState.hpp"
-#include "DEFINITIONS.h"
+#include "DEFINITIONS.hpp"
 
 #include <iostream>
 
@@ -11,10 +12,10 @@ namespace Sonar
 	{
 		
 	}
-	
+	//Aca va a cargar la textura de fondo
 	void SplashState::Init()
 	{
-		this->_data->assets.LoadTexture("Splash State Background",SPLASH_SCENE_BACKGROUND_FILEPATH);
+		_data->assets.LoadTexture("Splash State Background",SPLASH_SCENE_BACKGROUND_FILEPATH);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
 	}
@@ -22,9 +23,11 @@ namespace Sonar
 	{
 		sf::Event event;
 		
-		while(this-> _data->window.pollEvent( event )){
-			if (sf::Event::Closed== event.type){
-				this->_data->window.close( );
+		while(_data->window.pollEvent( event ))
+		{
+			if (sf::Event::Closed== event.type)
+			{
+				_data->window.close( );
 			}
 		}
 	}
@@ -37,10 +40,10 @@ namespace Sonar
 	}
 	void SplashState::Draw( float dt ) 
 	{
-		this->_data->window.clear( );
+		_data->window.clear( );
 		
-		this->_data->window.draw( _background );
+		_data->window.draw( _background );
 		
-		this->_data->window.display( );
+		_data->window.display( );
 	}
 };
