@@ -21,6 +21,9 @@ namespace Sonar
 		_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"));
 		_title.setTexture(this->_data->assets.GetTexture("Game Title"));
 		_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
+		
+		_title.setPosition((SCREEN_WIDTH/2)- (_title.getGlobalBounds().width/2),_title.getGlobalBounds().height/2);
+		_playButton.setPosition((SCREEN_WIDTH/2)- (_playButton.getGlobalBounds().width/2), (SCREEN_HEIGHT/2)- (_playButton.getGlobalBounds().height/2));
 	}
 	void MainMenuState::HandleInput()
 	{
