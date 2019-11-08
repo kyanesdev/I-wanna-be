@@ -1,6 +1,5 @@
 #include<sstream>
 #include "GameState.hpp"
-#include "MainMenuState.hpp"
 #include "DEFINITIONS.hpp"
 
 #include <iostream>
@@ -14,7 +13,7 @@ namespace Sonar
 	//Aca va a cargar la textura de fondo
 	void GameState::Init()
 	{
-		_data->assets.LoadTexture("GameBackground",GAME_MENU_BACKGROUND_FILEPATH);
+		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
