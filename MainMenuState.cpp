@@ -35,6 +35,11 @@ namespace Sonar
 			{
 				_data->window.close( );
 			}
+			
+			if(_data->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _data->window))
+			{
+				std::cout<<"Hola pinshe wanakas"<<std::endl;
+			}
 		}
 	}
 	void MainMenuState::Update(float dt)
