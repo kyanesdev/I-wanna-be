@@ -36,7 +36,7 @@ namespace Sonar
 		
 		if(this->_isAdding)
 		{
-			if(this->_states.empty())
+			if(!this->_states.empty())
 			{
 				if(this->_isReplacing)
 				{
