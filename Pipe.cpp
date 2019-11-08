@@ -4,7 +4,8 @@ namespace Sonar
 {
 	Pipe::Pipe(GameDataRef data) : _data (data)
 	{
-		
+		_groundHeight=145;
+		_pipeSpawnYOffset=0;
 	}
 	
 	
@@ -12,15 +13,16 @@ namespace Sonar
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
-		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height );
+		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height-_pipeSpawnYOffset);
 			
 		pipeSprites.push_back(sprite);
 	}
+	
 	void Pipe::SpawnTopPipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
-		sprite.setPosition(_data->window.getSize().x , 0 );
+		sprite.setPosition(_data->window.getSize().x , -_pipeSpawnYOffset);
 			
 			pipeSprites.push_back(sprite);
 	}
@@ -52,7 +54,6 @@ namespace Sonar
 			
 				pipeSprites.at(i).move(-movement, 0);
 			}
-		std:: cout<<pipeSprites.size()<<std::endl;
 	}
 	}
 	 
@@ -63,5 +64,10 @@ namespace Sonar
 			
 			_data->window.draw(pipeSprites.at(i));
 		}
+	}
+	
+	void Pipe::RandomisePipeOffset(){
+		
+		_pipeSpawnYOffset=rand()%(_groundHeight+80);
 	}
 	}
