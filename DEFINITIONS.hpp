@@ -8,6 +8,8 @@
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Splash Background.png"
 
 #define MAIN_MENU_BACKGROUND_FILEPATH "Sky.png"
+#define GAME_MENU_BACKGROUND_FILEPATH "wk.png"
+
 
 #define GAME_TITLE_FILEPATH "title.png"
 #define PLAY_BUTTON_FILEPATH "PlayButton.png"

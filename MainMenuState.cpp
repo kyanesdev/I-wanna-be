@@ -1,6 +1,7 @@
 
 #include<sstream>
 #include "MainMenuState.hpp"
+#include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 
 #include <iostream>
@@ -38,7 +39,7 @@ namespace Sonar
 			
 			if(_data->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _data->window))
 			{
-				std::cout<<"Hola pinshe wanakas"<<std::endl;
+				_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
 		}
 	}
