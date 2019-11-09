@@ -4,7 +4,7 @@ namespace Sonar
 {
 	Pipe::Pipe(GameDataRef data) : _data (data)
 	{
-		_groundHeight=145;
+		
 		_pipeSpawnYOffset=0;
 	}
 	
@@ -13,7 +13,7 @@ namespace Sonar
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
-		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height-_pipeSpawnYOffset);
+		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height-_pipeSpawnYOffset+390);
 			
 		pipeSprites.push_back(sprite);
 	}
@@ -68,6 +68,7 @@ namespace Sonar
 	
 	void Pipe::RandomisePipeOffset(){
 		
-		_pipeSpawnYOffset=rand()%(_groundHeight+80);
+		_pipeSpawnYOffset=rand()%+400;
+		std::cout<<_pipeSpawnYOffset;
 	}
 	}

@@ -27,7 +27,7 @@ namespace Sonar
 		GameDataRef _data;
 		std::vector<sf::Sprite> pipeSprites;
 		
-		int _groundHeight;
+		
 		int _pipeSpawnYOffset;
 	};
 }

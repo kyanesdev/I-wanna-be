@@ -15,8 +15,8 @@
 #define GAME_TITLE_FILEPATH "title.png"
 #define PLAY_BUTTON_FILEPATH "PlayButton.png"
 
-#define PIPE_UP_FILEPATH "Pipe.png"
-#define PIPE_DOWN_FILEPATH "Pipe.png"
+#define PIPE_UP_FILEPATH "Pipe2.png"
+#define PIPE_DOWN_FILEPATH "Pipe2.png"
 
 
 
