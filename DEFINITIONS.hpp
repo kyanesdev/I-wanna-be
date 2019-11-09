@@ -32,9 +32,9 @@
 #define TOBY_STATE_FALLING 2
 #define TOBY_STATE_FLYING 3
 
-#define GRAVITY 350.0f
-#define FLYING_SPEED 350.0f
+#define GRAVITY 250.0f
+#define FLYING_SPEED 300.0f
 
-#define FLYING_DURATION 0.25f
+#define FLYING_DURATION 0.30f
 
 

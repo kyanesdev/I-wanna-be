@@ -39,6 +39,8 @@ namespace Sonar
 			
 			if(_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
+				
+				toby->Tap();
 			
 			}
 		}
@@ -55,9 +57,11 @@ namespace Sonar
 			pipe->SpawnTopPipe();
 			clock.restart();
 			
+			
 		}
 		
 		toby->Animate(dt);
+		toby->Update(dt);
 	}
 	void GameState::Draw( float dt ) 
 	{
