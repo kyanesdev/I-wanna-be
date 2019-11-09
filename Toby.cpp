@@ -44,16 +44,16 @@ namespace Sonar
 	void Toby::Update (float dt){
 		
 		if(TOBY_STATE_FALLING == _tobyState){
-			
+		//cae gracias a la gravedad establecida	
 		_tobySprite.move(0,GRAVITY*dt);
 			
 		}
 		
 		else if (TOBY_STATE_FLYING == _tobyState){
-			
+		//sube gracias a la velocidad de vuelo establecida
 			_tobySprite.move(0,-FLYING_SPEED*dt);
 		}
-		
+		//hace que cuando pase el tiempo de vuelo al hacer un tap, toby comience a caer.
 		if (_movementClock.getElapsedTime().asSeconds()>FLYING_DURATION){
 			_movementClock.restart();
 			_tobyState= TOBY_STATE_FALLING;
@@ -61,6 +61,7 @@ namespace Sonar
 		
 	}
 	
+	//cada vez que se hace un tap el reloj vuelve a 0 y toby vuela durante el tiempo definido
 	void Toby::Tap(){
 		
 		_movementClock.restart();
