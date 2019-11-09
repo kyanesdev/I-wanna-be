@@ -69,6 +69,5 @@ namespace Sonar
 	void Pipe::RandomisePipeOffset(){
 		
 		_pipeSpawnYOffset=rand()%+400;
-		std::cout<<_pipeSpawnYOffset;
 	}
 	}

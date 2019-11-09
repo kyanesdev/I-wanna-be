@@ -16,13 +16,13 @@ namespace Sonar
 	{
 		_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe",PIPE_UP_FILEPATH);
-		_data->assets.LoadTexture("Bird 1",BIRD_FRAME_1_FILEPATH);
-		_data->assets.LoadTexture("Bird 2",BIRD_FRAME_2_FILEPATH);
-		_data->assets.LoadTexture("Bird 3",BIRD_FRAME_3_FILEPATH);
+		_data->assets.LoadTexture("Toby 1",TOBY_FRAME_1_FILEPATH);
+		_data->assets.LoadTexture("Toby 2",TOBY_FRAME_2_FILEPATH);
+		_data->assets.LoadTexture("Toby 3",TOBY_FRAME_3_FILEPATH);
 		
 		
 		pipe = new Pipe(_data);
-		bird = new Bird(_data);
+		toby = new Toby(_data);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 	}
@@ -57,7 +57,7 @@ namespace Sonar
 			
 		}
 		
-		bird->Animate(dt);
+		toby->Animate(dt);
 	}
 	void GameState::Draw( float dt ) 
 	{
@@ -65,7 +65,7 @@ namespace Sonar
 		
 		_data->window.draw( _background );
 		pipe->DrawPipes();
-		bird->Draw();
+		toby->Draw();
 		_data->window.display( );
 	}
 };
