@@ -73,7 +73,7 @@ namespace Sonar
 			toby->Update(dt);
 			
 			for(int i=0;i<SCREEN_HEIGHT;i++){
-				if(collision.CheckSpriteCollision(toby->GetSprite( )),SCREEN_HEIGHT){
+				if(collision.CheckSpriteCollision(toby->GetSprite( ))){
 					_gameState = GameStates::eGameOver;
 				}
 			}

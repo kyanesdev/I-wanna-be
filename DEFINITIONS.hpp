@@ -37,6 +37,8 @@
 
 #define FLYING_DURATION 0.30f
 
+
+
 enum GameStates{
 	eReady,
 	ePlaying,
