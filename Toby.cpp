@@ -68,4 +68,8 @@ namespace Sonar
 		_tobyState= TOBY_STATE_FLYING;
 		
 	}
+	const sf::Sprite &Toby::GetSprite() const{
+		return _tobySprite;
+	};
+	
 }

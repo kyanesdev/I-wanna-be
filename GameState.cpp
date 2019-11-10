@@ -25,6 +25,7 @@ namespace Sonar
 		toby = new Toby(_data);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+		_gameState = GameStates::eReady; 
 	}
 	void GameState::HandleInput()
 	{
@@ -39,29 +40,46 @@ namespace Sonar
 			
 			if(_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
+				if(GameStates::eGameOver != _gameState){
+					toby->Tap();
+				}
 				
-				toby->Tap();
 			
 			}
 		}
 	}
 	void GameState::Update(float dt)
 	{
-		pipe->MovePipes(dt);
-		if(clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY){
-		
-			pipe->RandomisePipeOffset();
-			
-			pipe->SpawnInvisiblePipe();
-			pipe->SpawnBottomPipe();
-			pipe->SpawnTopPipe();
-			clock.restart();
-			
+		if(GameStates::eGameOver != _gameState){
+			toby->Animate(dt);
 			
 		}
-		
-		toby->Animate(dt);
-		toby->Update(dt);
+		if(GameStates::ePlaying != _gameState){
+			pipe->MovePipes(dt);
+			
+			if(clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY){
+			
+				pipe->RandomisePipeOffset();
+				
+				pipe->SpawnInvisiblePipe();
+				pipe->SpawnBottomPipe();
+				pipe->SpawnTopPipe();
+				clock.restart();
+				
+				
+			}
+			
+			
+			toby->Update(dt);
+			
+			for(int i=0;i<SCREEN_HEIGHT;i++){
+				if(collision.CheckSpriteCollision(toby->GetSprite( )),SCREEN_HEIGHT){
+					_gameState = GameStates::eGameOver;
+				}
+			}
+			
+			
+	    }
 	}
 	void GameState::Draw( float dt ) 
 	{

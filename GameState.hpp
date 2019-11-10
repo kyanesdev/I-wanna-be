@@ -6,6 +6,8 @@
 #include "Pipe.hpp"
 #include "Toby.hpp"
 
+#include "Collision.hpp"
+
 
 namespace Sonar
 {
@@ -26,8 +28,10 @@ namespace Sonar
 		
 		Pipe *pipe;
 		Toby *toby;
+		Collision collision;
 		
 		sf::Clock clock;
+		int _gameState; //crea otra variable para que no colisione con el definicions .cpp
 		
 	};
 };
