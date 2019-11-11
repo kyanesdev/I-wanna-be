@@ -19,7 +19,9 @@ namespace Sonar
 		
 		void SpawnInvisiblePipe();
 		
-		//void SpawnScoringPipe( );
+		const std::vector<sf::Sprite> &GetSprites () const;
+		
+		//void SpawnScoring( );
 		
 		void MovePipes(float dt);
 		

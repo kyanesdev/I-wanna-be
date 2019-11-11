@@ -31,7 +31,8 @@ namespace Sonar
 		Collision collision;
 		
 		sf::Clock clock;
-		int _gameState; //crea otra variable para que no colisione con el definicions .cpp
+		
+		int _gameState; //crea otra variable para que no colisione con el definitions.cpp
 		
 		//int_score;
 	};

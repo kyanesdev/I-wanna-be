@@ -2,7 +2,6 @@
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 
-
 #include <iostream>
 
 namespace Sonar
@@ -55,24 +54,26 @@ namespace Sonar
 	}
 	void GameState::Update(float dt)
 	{
-		if(GameStates::eGameOver != _gameState){
+		if(GameStates::eGameOver != _gameState)
+		{
 			toby->Animate(dt);
 			
 		}
-		if(GameStates::ePlaying == _gameState){
+		if(GameStates::ePlaying == _gameState)
+		{
 			pipe->MovePipes(dt);
 			
 			if(clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY){
 			
 				pipe->RandomisePipeOffset();
 				
-				pipe->SpawnInvisiblePipe();
+				
 				pipe->SpawnBottomPipe();
 				pipe->SpawnTopPipe();
 				//pipe->SpawnScoringPipe();
 				
 				clock.restart();
-				
+			
 				
 			}
 			
@@ -105,8 +106,23 @@ namespace Sonar
 					}
 				}
 			}*/
-			for(int i=0;i<780;i++){
-				if(collision.CheckSpriteCollision(toby->GetSprite( ))){
+			
+			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites ();
+			
+			
+			for(int i=0; i < pipeSprites.size(); i++)
+			{
+				if(collision.CheckPipeCollision(toby->GetSprite(), pipeSprites.at(i)))
+				{
+					_gameState = GameStates::eGameOver;
+				}
+			}
+			
+			
+			
+			for(int i=0;i<780;i++)
+			{
+				if(collision.CheckSpriteCollision(toby->GetSprite())){
 					_gameState = GameStates::eGameOver;
 					
 				}

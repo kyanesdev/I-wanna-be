@@ -8,16 +8,17 @@ namespace Sonar
 		_pipeSpawnYOffset=0;
 	}
 	
-	
+	//Esta funcion hace que aparezcan los tubos de abajo
 	void Pipe::SpawnBottomPipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
-		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height-_pipeSpawnYOffset+390);
+		sprite.setPosition(_data->window.getSize().x , _data->window.getSize().y - sprite.getGlobalBounds().height-_pipeSpawnYOffset+450);
 			
 		pipeSprites.push_back(sprite);
 	}
 	
+	//Esta funcion hace que aparezcan los tubos de arriba
 	void Pipe::SpawnTopPipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
@@ -26,7 +27,9 @@ namespace Sonar
 			
 			pipeSprites.push_back(sprite);
 	}
-	void Pipe::SpawnInvisiblePipe()
+	
+	//Esta funcion es para corregir errores de colision entre los tubos
+	/*void Pipe::SpawnInvisiblePipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));
 		
@@ -38,6 +41,7 @@ namespace Sonar
 		
 		
 	}
+	*/
 	/*void Pipe::SpawnScoringPipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
@@ -91,8 +95,29 @@ namespace Sonar
 		}
 	}
 	
-	void Pipe::RandomisePipeOffset(){
-		
+	void Pipe::RandomisePipeOffset()
+	{
 		_pipeSpawnYOffset=rand()%+400;
 	}
+		const std::vector<sf::Sprite> &Pipe::GetSprites () const
+	{
+		return pipeSprites;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
