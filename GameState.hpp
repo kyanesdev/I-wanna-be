@@ -33,5 +33,6 @@ namespace Sonar
 		sf::Clock clock;
 		int _gameState; //crea otra variable para que no colisione con el definicions .cpp
 		
+		//int_score;
 	};
 };

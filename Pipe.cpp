@@ -38,6 +38,16 @@ namespace Sonar
 		
 		
 	}
+	/*void Pipe::SpawnScoringPipe()
+	{
+		sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
+		
+		sprite.setPosition(_data->window.getSize().x , 0);
+		
+		scoringPipes.push_back(sprite);
+		
+		
+	}*/
 	void Pipe::MovePipes(float dt)
 	{
 		for(unsigned short int i = 0 ; i < pipeSprites.size(); i++)
@@ -55,6 +65,21 @@ namespace Sonar
 				pipeSprites.at(i).move(-movement, 0);
 			}
 	}
+		/*for(unsigned short int i = 0 ; i < scoringPipes.size(); i++)
+		{
+			if(scoringPipes.at(i).getPosition().x < 0 - scoringPipes.at(i).getGlobalBounds().width){
+				
+			scoringPipes.erase(scoringPipes.begin()+i);
+				
+			}
+			else{
+				
+				float movement = PIPE_MOVEMENT_SPEED * dt;
+				
+			scoringPipes.at(i).move(-movement, 0);
+				}
+			}
+		}*/
 	}
 	 
 	void Pipe::DrawPipes()
@@ -70,4 +95,4 @@ namespace Sonar
 		
 		_pipeSpawnYOffset=rand()%+400;
 	}
-	}
+}
