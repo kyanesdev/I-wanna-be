@@ -41,7 +41,8 @@ namespace Sonar
 			if(_data->input.IsSpriteClicked(_background, sf::Mouse::Left, _data->window))
 			{
 				if(GameStates::eGameOver != _gameState){
-					toby->Tap();
+					_gameState=GameStates::ePlaying;
+					toby->Tap( );
 				}
 				
 			
@@ -54,7 +55,7 @@ namespace Sonar
 			toby->Animate(dt);
 			
 		}
-		if(GameStates::ePlaying != _gameState){
+		if(GameStates::ePlaying == _gameState){
 			pipe->MovePipes(dt);
 			
 			if(clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY){
@@ -72,9 +73,10 @@ namespace Sonar
 			
 			toby->Update(dt);
 			
-			for(int i=0;i<SCREEN_HEIGHT;i++){
+			for(int i=0;i<780;i++){
 				if(collision.CheckSpriteCollision(toby->GetSprite( ))){
 					_gameState = GameStates::eGameOver;
+					
 				}
 			}
 			

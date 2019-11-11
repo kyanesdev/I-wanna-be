@@ -8,5 +8,5 @@ namespace Sonar{
 		Collision( );
 		
 		bool CheckSpriteCollision( sf::Sprite sprite1);
-	};
+	};  
 };
