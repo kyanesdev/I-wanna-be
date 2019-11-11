@@ -29,6 +29,8 @@ namespace Sonar
 	}
 	
 	//Esta funcion es para corregir errores de colision entre los tubos
+	
+	//Sacamos esta funcion porque creabla problemas
 	/*void Pipe::SpawnInvisiblePipe()
 	{
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe"));

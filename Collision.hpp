@@ -12,5 +12,6 @@ namespace Sonar
 		bool CheckSpriteCollision( sf::Sprite sprite1);
 		
 		bool CheckPipeCollision ( sf::Sprite sprite1, sf::Sprite sprite2 );
+		
 	};
 };
