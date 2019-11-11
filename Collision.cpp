@@ -9,9 +9,10 @@ namespace Sonar
 	//Esta funcion comprueba la colision del personaje en un rango
 	bool Collision::CheckSpriteCollision( sf::Sprite sprite1 ){
 		sf::Rect<float> rect1 = sprite1.getGlobalBounds( );
-		sf::Rect<float> rect2(0,780,600,780);
+		sf::Rect<float> rect2(0,745,600,1);
+		sf::Rect<float> rect3(0,0,600,1);
 		
-		if( rect1.intersects ( rect2 ) )
+		if( rect1.intersects ( rect2 ) || rect1.intersects ( rect3 )  )
 		{
 			return true;
 		}
@@ -20,6 +21,9 @@ namespace Sonar
 			return false;
 		}
 	};
+	
+	
+	
 	
 	
 	bool Collision::CheckPipeCollision ( sf::Sprite sprite1, sf::Sprite sprite2 )
