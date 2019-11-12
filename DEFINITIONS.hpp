@@ -43,7 +43,7 @@
 
 //Game overflow_error
 
-#define GAME_OVER_FILEPATH "GameOver.png"
+
 #define SCORES_FRAME_FILEPATH "ScoresFrame.png" 
 #define RETRY_BUTTON_FILEPATH "PlayButton.png"
 #define GAME_OVER_CONTAINER_FILEPATH "Container.png"

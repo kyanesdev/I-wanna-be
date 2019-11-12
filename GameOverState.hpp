@@ -21,7 +21,6 @@ namespace Sonar
 		GameDataRef _data;
 		
 		sf::Sprite _background;
-		sf::Sprite _gameOver;
 		sf::Sprite _scoreContainer;
 		sf::Sprite _retryButton;
 		

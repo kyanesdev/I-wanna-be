@@ -19,8 +19,6 @@ namespace Sonar
 		_data->assets.LoadTexture("Game Over Background",GAME_OVER_BACKGROUND_FILEPATH);
 		_background.setTexture(this->_data->assets.GetTexture("Game Over Background"));
 		
-		_data->assets.LoadTexture("Game Over",GAME_OVER_BACKGROUND_FILEPATH);
-		_gameOver.setTexture(this->_data->assets.GetTexture("Game Over"));
 		
 		_data->assets.LoadTexture("RetryButton",RETRY_BUTTON_FILEPATH);
 		_retryButton.setTexture(this->_data->assets.GetTexture("RetryButton"));
@@ -30,8 +28,6 @@ namespace Sonar
 
 		
 		_scoreContainer.setPosition((_data -> window.getSize().x/2)  -	(_scoreContainer.getGlobalBounds().width/2),(_scoreContainer.getGlobalBounds().height/2));
-		
-		_gameOver.setPosition((_data -> window.getSize().x/2) -	(_gameOver.getGlobalBounds().width/2),(_scoreContainer.getPosition().y - (_gameOver.getGlobalBounds().height*1.2)));
 		
 		_retryButton.setPosition((_data -> window.getSize().x/2) -	(_retryButton.getGlobalBounds().width/2),_scoreContainer.getPosition().y + _scoreContainer.getGlobalBounds().height +_retryButton.getGlobalBounds().height*0.2);
 	}
@@ -65,8 +61,6 @@ namespace Sonar
 		_data->window.clear( );
 		
 		_data->window.draw( _background );
-		
-		_data->window.draw (_gameOver);
 		
 		_data->window.draw(_scoreContainer);
 		
