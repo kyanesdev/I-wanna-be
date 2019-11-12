@@ -21,19 +21,19 @@ namespace Sonar
 		
 		const std::vector<sf::Sprite> &GetSprites () const;
 		
-		//void SpawnScoring( );
+		void SpawnScoringPipe( );
 		
 		void MovePipes(float dt);
 		
 		void RandomisePipeOffset();
 		
-		//const std::vector<sf::Sprite> &GetSprites() const;
-		//std::vector<sf::Sprite> &GetScoringSprites ( );
+		
+		std::vector<sf::Sprite> &GetScoringSprites ( );
 		
 	private:
 		GameDataRef _data;
 		std::vector<sf::Sprite> pipeSprites;
-		//std::vector<sf::Sprite> scoringPipe;
+		std::vector<sf::Sprite> scoringPipes;
 		
 		
 		

@@ -2,6 +2,7 @@
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 
+
 #include <iostream>
 
 namespace Sonar
@@ -18,7 +19,7 @@ namespace Sonar
 		_data->assets.LoadTexture("Toby 1",TOBY_FRAME_1_FILEPATH);
 		_data->assets.LoadTexture("Toby 2",TOBY_FRAME_2_FILEPATH);
 		_data->assets.LoadTexture("Toby 3",TOBY_FRAME_3_FILEPATH);
-		//_data->assets.LoadTexture("Scoring Pipe",SCORING_PIPE_FILEPATH);
+		_data->assets.LoadTexture("Scoring Pipe",SCORING_PIPE_FILEPATH);
 		
 		
 		pipe = new Pipe(_data);
@@ -26,7 +27,7 @@ namespace Sonar
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		
-		//_score=0;
+		_score=0;
 		
 		_gameState = GameStates::eReady; 
 	}
@@ -70,7 +71,7 @@ namespace Sonar
 				
 				pipe->SpawnBottomPipe();
 				pipe->SpawnTopPipe();
-				//pipe->SpawnScoringPipe();
+				pipe->SpawnScoringPipe();
 				
 				clock.restart();
 			
@@ -80,33 +81,6 @@ namespace Sonar
 			
 			toby->Update(dt);
 			
-			
-			/*
-			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites();
-			
-			for(int i=0;i<pipeSprites.size;i++){
-				if(collision.CheckSpriteCollision(toby->GetSprite( ), pipeSprites.at(i))){
-					_gameState = GameStates::eGameOver;
-					
-				}
-			}*/
-			/*if(GameStates::ePlaying ==_gameState){
-				std::vector<sf::Sprite> &scoringSprites = pipe->GetScoringSprites();
-				
-				for(int i=0;i<scoringSprites.size;i++){
-				
-					if(collision.CheckSpriteCollision(toby->GetSprite( ), scoringSprites.at(i))){
-					
-					-score++;
-					
-					std::cout<<_score<<std::endl;
-					
-					scoringSprites.erase( scoringSprites.begin()+i);
-					
-					}
-				}
-			}*/
-			
 			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites ();
 			
 			
@@ -115,6 +89,22 @@ namespace Sonar
 				if(collision.CheckPipeCollision(toby->GetSprite(), pipeSprites.at(i)))
 				{
 					_gameState = GameStates::eGameOver;
+				}
+			}
+			std::vector<sf::Sprite> &scoringSprites = pipe->GetScoringSprites ( );
+			
+			if(GameStates::ePlaying ==_gameState){
+				for(int i=0;i<scoringSprites.size();i++){
+					
+					if(collision.CheckPipeCollision(toby->GetSprite( ),scoringSprites.at(i))){
+						
+						_score++;
+						
+						std::cout<<_score<<std::endl;
+						
+						scoringSprites.erase( scoringSprites.begin()+i);
+						
+					}
 				}
 			}
 			
@@ -140,4 +130,4 @@ namespace Sonar
 		toby->Draw();
 		_data->window.display( );
 	}
-};
+}

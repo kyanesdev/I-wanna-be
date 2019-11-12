@@ -34,6 +34,6 @@ namespace Sonar
 		
 		int _gameState; //crea otra variable para que no colisione con el definitions.cpp
 		
-		//int_score;
+		int _score;
 	};
 };

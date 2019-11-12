@@ -17,7 +17,7 @@
 
 #define PIPE_UP_FILEPATH "Pipe.png"
 #define PIPE_DOWN_FILEPATH "Pipe.png"
-//#define SCORING_PIPE_FILEPATH "InvisibleScoring.Pipe.png"
+#define SCORING_PIPE_FILEPATH "InvisibleScoringPipe.png"
 
 
 #define PIPE_MOVEMENT_SPEED 200.0f
