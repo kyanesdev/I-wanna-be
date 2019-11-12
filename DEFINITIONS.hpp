@@ -19,6 +19,8 @@
 #define PIPE_DOWN_FILEPATH "Pipe.png"
 #define SCORING_PIPE_FILEPATH "InvisibleScoringPipe.png"
 
+#define FLAPPY_FONT_FILEPATH "FlappyFont.ttf"
+
 
 #define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FREQUENCY 2.0f

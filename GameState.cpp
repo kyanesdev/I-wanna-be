@@ -2,7 +2,6 @@
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
 
-
 #include <iostream>
 
 namespace Sonar
@@ -20,14 +19,17 @@ namespace Sonar
 		_data->assets.LoadTexture("Toby 2",TOBY_FRAME_2_FILEPATH);
 		_data->assets.LoadTexture("Toby 3",TOBY_FRAME_3_FILEPATH);
 		_data->assets.LoadTexture("Scoring Pipe",SCORING_PIPE_FILEPATH);
+		_data->assets.LoadFont("FlappyFont.ttf",FLAPPY_FONT_FILEPATH);
 		
 		
 		pipe = new Pipe(_data);
 		toby = new Toby(_data);
+		hud = new HUD ( _data);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 		
 		_score=0;
+		hud->UpdateScore( _score );
 		
 		_gameState = GameStates::eReady; 
 	}
@@ -91,16 +93,18 @@ namespace Sonar
 					_gameState = GameStates::eGameOver;
 				}
 			}
-			std::vector<sf::Sprite> &scoringSprites = pipe->GetScoringSprites ( );
 			
-			if(GameStates::ePlaying ==_gameState){
+			
+			
+			if(GameStates::ePlaying == _gameState){
+				std::vector<sf::Sprite> &scoringSprites = pipe->GetScoringSprites ( );
 				for(int i=0;i<scoringSprites.size();i++){
 					
 					if(collision.CheckPipeCollision(toby->GetSprite( ),scoringSprites.at(i))){
 						
 						_score++;
 						
-						std::cout<<_score<<std::endl;
+						hud->UpdateScore( _score );
 						
 						scoringSprites.erase( scoringSprites.begin()+i);
 						
@@ -128,6 +132,8 @@ namespace Sonar
 		_data->window.draw( _background );
 		pipe->DrawPipes();
 		toby->Draw();
+		hud->Draw();
+		
 		_data->window.display( );
 	}
 }

@@ -5,6 +5,7 @@
 #include "Game.hpp"
 #include "Pipe.hpp"
 #include "Toby.hpp"
+#include "HUD.hpp"
 
 #include "Collision.hpp"
 
@@ -29,6 +30,8 @@ namespace Sonar
 		Pipe *pipe;
 		Toby *toby;
 		Collision collision;
+		HUD *hud;
+		
 		
 		sf::Clock clock;
 		
