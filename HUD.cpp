@@ -11,7 +11,7 @@ namespace Sonar
 		
 		_scoreText.setString("0");
 		
-		_scoreText.setCharacterSize(128);
+		_scoreText.setCharacterSize(80);
 		
 		_scoreText.setFillColor( sf::Color::White);
 		

@@ -1,6 +1,7 @@
 #include<sstream>
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
+#include "GameOverState.hpp"
 
 #include <iostream>
 
@@ -86,6 +87,7 @@ namespace Sonar
 			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites ();
 			
 			
+			
 			for(int i=0; i < pipeSprites.size(); i++)
 			{
 				if(collision.CheckPipeCollision(toby->GetSprite(), pipeSprites.at(i)))
@@ -123,8 +125,14 @@ namespace Sonar
 			}
 			
 			
-	    }
+	    }	
+	if(GameStates::eGameOver == _gameState){
+			_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+			
 	}
+	}
+
+	
 	void GameState::Draw( float dt ) 
 	{
 		_data->window.clear( );

@@ -1,8 +1,9 @@
-#pragma once
+
 
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "Game.hpp"
+
 
 namespace Sonar
 {
@@ -20,6 +21,9 @@ namespace Sonar
 		GameDataRef _data;
 		
 		sf::Sprite _background;
+		sf::Sprite _gameOver;
+		sf::Sprite _scoreContainer;
+		sf::Sprite _retryButton;
 		
 	};
-};
+}
